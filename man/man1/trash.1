@@ -1,0 +1,40 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "TRASH" "1" "March 2017" "TRASH 0.1.0" ""
+.
+.SH "NAME"
+\fBtrash\fR \- Moves files to the trash
+.
+.SH "SYNOPSIS"
+\fBtrash\fR [\fIfile\fR]
+.
+.SH "DESCRIPTION"
+\fBtrash\fR moves files to the \fI~/\.Trash\fR folder, so you don\'t need to call \fIrm \-rf\fR
+.
+.P
+Intended to be used with macOS, but could be used with any Unix OS with \fI~/\.Trash\fR aliased\.
+.
+.SH "OPTIONS"
+.
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Show usage
+.
+.TP
+\fB\-v\fR, \fB\-\-version\fR
+Show version
+.
+.SH "EXAMPLES"
+Trash a \fB\.DS_Store\fR:
+.
+.IP "" 4
+.
+.nf
+
+$ trash ~/\.DS_Store
+.
+.fi
+.
+.IP "" 0
+
