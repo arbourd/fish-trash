@@ -8,4 +8,4 @@ before_install:
 script:
     - mkdir ~/.Trash
     - curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman
-    - fish -c "fisher arbourd/fishtape .; fishtape test/*.fish"
+    - fish -c "fisher fishtape .; fishtape test/*.fish"
