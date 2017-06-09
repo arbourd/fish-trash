@@ -15,7 +15,7 @@ $ fisher arbourd/trash
 ## Usage
 
 ```sh
-$ trash [FILE]
+$ trash [file ...]
 ```
 
 ## "Put Back" feature in macOS

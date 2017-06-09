@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 
-`trash` [*file*]
+`trash` [*file ...*]
 
 ## DESCRIPTION
 
