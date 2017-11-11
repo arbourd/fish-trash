@@ -1,6 +1,6 @@
 # trash
 
-[![Build Status](https://travis-ci.org/arbourd/trash.svg?branch=master)](https://travis-ci.org/arbourd/trash)
+[![Build Status](https://travis-ci.org/arbourd/fish-trash.svg?branch=master)](https://travis-ci.org/arbourd/trash)
 
 A [fish](https://fishshell.com/) utility to move files to macOS trash, so you don't have to call `rm -rf`.
 
@@ -9,7 +9,7 @@ A [fish](https://fishshell.com/) utility to move files to macOS trash, so you do
 With [fisherman](https://github.com/fisherman/fisherman)
 
 ```sh
-$ fisher arbourd/trash
+$ fisher arbourd/fish-trash
 ```
 
 ## Usage
