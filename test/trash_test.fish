@@ -5,13 +5,14 @@ set path "$DIR/test/fixtures"
 
 function setup
     mkdir -p "$path"
-    touch "$path/test1.file"
-    touch "$path/test2.file"
+    set -g ran (random)
+    touch "$path/$ran-test.file"
+    touch "$path/$ran-test2.file"
 end
 
 function teardown
     if test (count (ls "$path")) -ne 0
-        rm "$path"/*.file
+        trash "$path"/*.file
     end
 end
 
@@ -49,26 +50,26 @@ end
 
 test "calling trash with multiple arguments moves files to trash"
     "passed" = (
-        trash "$path/test1.file" "$path/test2.file"; if test (count (ls "$path")) -eq 0
+        trash "$path/$ran-test.file" "$path/$ran-test2.file"; if test (count (ls "$path")) -eq 0
             echo "passed"
         end
     )
 end
 
 test "calling trash with multiple params returns 0"
-    "0" = (trash "$path/test1.file" "$path/test2.file"; echo $status)
+    "0" = (trash "$path/$ran-test.file" "$path/$ran-test2.file"; echo $status)
 end
 
 test "calling trash with proper path moves file to trash"
     "passed" = (
-        trash "$path/test1.file"; if not test -e "$path/test1.file"
+        trash "$path/$ran-test.file"; if not test -e "$path/$ran-test.file"
             echo "passed"
         end
     )
 end
 
 test "calling trash with proper path returns 0"
-    "0" = (trash "$path/test1.file"; echo $status)
+    "0" = (trash "$path/$ran-test.file"; echo $status)
 end
 
 test "calling trash with proper wildcard moves file to trash"
