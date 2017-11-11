@@ -9,16 +9,30 @@ function trash -d "Moves files and folders to macOS trash"
         echo "trash, version $trash_version"
     end
 
-    function __trash_move -a path
-        command mv $path ~/.Trash/
+    function __trash_move -a filepath
+        set -l basepath (basename "$filepath")
+        if command ls ~/.Trash/$basepath >/dev/null ^/dev/null
+            set -l fileprop (string split -r -m1 "." "$basepath")
+
+            if test (count $fileprop) -eq 2
+                echo "2 args"
+                command mv $filepath ~/.Trash/$fileprop[1]\ (date "+%I.%M.%S %p").$fileprop[2]
+            else
+                echo "1 arg"
+                command mv $filepath ~/.Trash/$fileprop[1]\ (date "+%I.%M.%S %p")
+            end
+        else
+            echo "reg"
+            command mv $filepath ~/.Trash/$basepath
+        end
     end
 
     function __trash
-        for path in $argv
-            if command ls "$path" >/dev/null ^/dev/null
-                __trash_move $path
+        for filepath in $argv
+            if command ls "$filepath" >/dev/null ^/dev/null
+                __trash_move $filepath
             else
-                echo "trash: $path: No such file or directory"
+                echo "trash: $filepath: No such file or directory"
                 return 1
             end
         end
