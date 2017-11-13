@@ -1,5 +1,5 @@
 function trash -d "Moves files and folders to macOS trash"
-    set -l trash_version "0.2.0"
+    set -l trash_version "0.3.0"
 
     function __trash_usage
         echo "Usage: trash [file ...]"
@@ -15,14 +15,11 @@ function trash -d "Moves files and folders to macOS trash"
             set -l fileprop (string split -r -m1 "." "$basepath")
 
             if test (count $fileprop) -eq 2
-                echo "2 args"
                 command mv $filepath ~/.Trash/$fileprop[1]\ (date "+%I.%M.%S %p").$fileprop[2]
             else
-                echo "1 arg"
                 command mv $filepath ~/.Trash/$fileprop[1]\ (date "+%I.%M.%S %p")
             end
         else
-            echo "reg"
             command mv $filepath ~/.Trash/$basepath
         end
     end

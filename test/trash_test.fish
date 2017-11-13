@@ -25,7 +25,7 @@ test "calling trash with --help returns 0"
 end
 
 test "calling trash with --version shows version"
-    "trash, version 0.2.0" = (trash --version)
+    "trash, version 0.3.0" = (trash --version)
 end
 
 test "calling trash with --version returns 0"
