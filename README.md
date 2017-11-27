@@ -1,4 +1,4 @@
-# trash
+# fish-trash
 
 [![Build Status](https://travis-ci.org/arbourd/fish-trash.svg?branch=master)](https://travis-ci.org/arbourd/trash)
 
@@ -21,6 +21,13 @@ $ trash [file ...]
 ## "Put Back" feature in macOS
 
 Put Back functionality is not available with `trash` because it does not use Finder's API to trash items. Consider using [ali-rantakari/trash](https://github.com/ali-rantakari/trash) if needed.
+
+
+## See Also
+
+- [ali-rantakari/trash](https://github.com/ali-rantakari/trash)
+- [arbourd/trashOS](https://github.com/arbourd/trashOS)
+
 
 ## License
 
